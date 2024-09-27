@@ -1,11 +1,20 @@
 import React from 'react';
-import { View , Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import ProductListScreen from './screens/ProductListScreen';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 const App = () => {
     return(
-        <View style={{flex : 1,justifyContent:'center',alignItems:'center'}}>
-            <Text> Hello , world </Text>
-        </View>
+       <SafeAreaProvider>
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName='ProductList'>
+                <Stack.Screen name='ProductList' component={ProductListScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
+       </SafeAreaProvider>
     );
 };
 
