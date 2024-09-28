@@ -17,6 +17,11 @@ const ProductDetailsScreen = ({route}) => {
             <StyledImage source={{uri:product.mainImage}} style={{width:'100%',height:100,borderRadius:8}} resizeMode="cover" />
             <StyledText className="text-2xl font-bold mb-3">{product.name}</StyledText>
             <StyledText className="text-lg mb-3">Brand: {product.brandName}</StyledText>
+            <StyledText className="text-lg mb-3"> SKU: {product.SKU}</StyledText>
+            <StyledText className="text-lg mb-3">Available Sizes: {product.sizes.join(',')}</StyledText>
+            <StyledText className="text-lg mb-3">Stock Status: {product.stockStatus}</StyledText>
+            <StyledText className="text-lg mb-3">Colour: {product.colour}</StyledText>
+            <StyledText className="text-lg mb-3">Description: {product.description}</StyledText>
         </StyledScrollView>
     )
 };
