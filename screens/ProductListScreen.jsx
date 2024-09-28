@@ -16,7 +16,6 @@ const ProductListScreen = ({navigation}) => {
             try{
                 const response = await axios.get('https://s3-eu-west-1.amazonaws.com/api.themeshplatform.com/products.json');
                 setProducts(response.data.data);
-                console.log("Products",response.data.data);
             }catch(error){
                 console.error('Error fetching products',error);
             }
